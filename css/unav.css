@@ -10,31 +10,33 @@ html, body, #map {
 #map {
 	margin-top: 50px;
 }
-#unav {
-	position: absolute;
-	top: 0px;
-	right: 0px;
-	width: 250px;
-	height: 100px;
-	background: #ffffff;
-	border: 1px solid;
-	border-bottom-left-radius: 15px;
-	margin: 0;
-	padding: 0;
-}
-#brand {
-	font-size: 12px;
-}
 #logo {
 	vertical-align: middle;
 	width: 50px;
 	height: 50px;
 }
+#brand {
+	font-size: 12px;
+}
+#brand{
+	font-size: 12px;
+}
 .coord {
-	font-size: 10px;
+	font-size: 11px;
 }
-#coords {
-	border-left: 10px;
-	margin-top: -12px;
-	margin-left: 50px;
+.tg  {
+	border-collapse:collapse;
+	border-spacing:0;
+	background: #ffffff;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 250px;
+	height: 45px;
+	background: #ffffff;
+	margin: 0;
+	padding: 0;
 }
+.tg td{font-family:Arial, sans-serif;padding:0px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+.tg th{font-family:Arial, sans-serif;font-weight:normal;padding:0px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+.tg .tg-yw4l{vertical-align:top;padding-top:5px;}
