@@ -58,6 +58,9 @@
 			pos.setPosition(ol.proj.transform([parseFloat(getURLParameter('lon')), parseFloat(getURLParameter('lat'))], 'EPSG:4326', 'EPSG:3857'));
 			map.getView().setCenter(ol.proj.transform([parseFloat(getURLParameter('lon')), parseFloat(getURLParameter('lat'))], 'EPSG:4326', 'EPSG:3857'));
 		}
+		else {
+			map.getView().setZoom(4);
+		}
 	</script>
   </body>
 </html>
