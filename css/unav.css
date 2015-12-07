@@ -41,9 +41,15 @@ html, body, #map {
 }
 
 
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{font-family:Arial, sans-serif;font-size:14px;padding:0px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
-.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+.tg  {
+	border-collapse:collapse;
+	border-spacing:0;
+	-webkit-box-shadow: -3px 3px 4px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    -3px 3px 4px 0px rgba(50, 50, 50, 0.75);
+	box-shadow:         -3px 3px 4px 0px rgba(50, 50, 50, 0.75);
+}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:0px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;}
 .tg .tg-yw4l{vertical-align:top;border-top:1px solid #ffffff;text-align: center;}
 
 
@@ -57,7 +63,8 @@ html, body, #map {
 	text-align: center;
 	border-top-left-radius: 5px;
 	color: #000000;
-	display: table; overflow: hidden;
+	display: table; 
+	overflow: hidden;
 }
 #attrib_text {
 	display: table-cell;
