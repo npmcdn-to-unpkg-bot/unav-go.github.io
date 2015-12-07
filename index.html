@@ -39,18 +39,22 @@
 		map.addOverlay(pos);
 	</script>
 	<div id="unav">
+		
 		<table class="tg">
 		  <tr>
-			<th class="tg-031e">
-				<a href="https://uappexplorer.com/app/navigator.costales"><img src="img/logo.png" id="logo"></a>
-			</th>
 			<th class="tg-yw4l">
-				<span id="brand"><a href="https://uappexplorer.com/app/navigator.costales">uNav</a> for <a href="http://www.ubuntu.com/phone/devices">Ubuntu</a></span><br>
-				<span class="coord" id="lat">Lat: ?</span>&nbsp;<span class="coord" id="lon">Lon: ?</span>
+				<a href="https://uappexplorer.com/app/navigator.costales"><img src="img/unav.png" id="unav_logo"></a> for <a href="http://www.ubuntu.com/phone/devices"><img id="ubuntu_logo" src="img/ubuntu.svg"></a>
 			</th>
+		  </tr>
+		  <tr>
+			<td class="tg-yw4l">
+				<span class="coord" id="lat">Lat: ?</span>&nbsp;<span class="coord" id="lon">Lon: ?</span>
+			</td>
 		  </tr>
 		</table>
 	</div>
+	<div id="map_attribution"><span id="attrib_text">Powered by © <a href="https://mapzen.com/projects/valhalla">Mapzen</a> © <a href="http://open.mapquest.com/">MapQuest</a> © <a href="qml_go_url('http://www.openstreetmap.org/copyright">OpenStreetMap contributors</a></span></div>
+
 	<script>
 		function getURLParameter(name) {
 		  return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
