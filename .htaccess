@@ -1,2 +1,2 @@
 RewriteEngine On
-RewriteRule ^([^?]+)\?(.*)$ index.html?lat=$1&lon=$2 [L,QSA]
+RewriteRule ^([a-z]+)\/([0-9]+)\/?$ index.html?param=$1&param2=$2 [NC]
