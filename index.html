@@ -56,11 +56,13 @@
 	<div id="map_attribution"><span id="attrib_text">© <a href="https://mapzen.com/projects/valhalla">Mapzen</a> © <a href="http://open.mapquest.com/">MapQuest</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap contributors</a></span></div>
 
 	<script>
+		function isFloat(n) {
+			return n === +n && n !== (n|0);
+		}
 		function getURLParameter(name) {
 		  return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
 		}
-		console.log(parseFloat(getURLParameter('lat')));
-		if (parseFloat(getURLParameter('lat')) !== null && parseFloat(getURLParameter('lon')) !== null) {
+		if (isFloat(getURLParameter('lat')) && isFloat(getURLParameter('lon'))) {
 			$('#lat').html("Lat: " + parseFloat(getURLParameter('lat')).toFixed(4));
 			$('#lon').html("Lon: " + parseFloat(getURLParameter('lon')).toFixed(4));
 			pos.setPosition(ol.proj.transform([parseFloat(getURLParameter('lon')), parseFloat(getURLParameter('lat'))], 'EPSG:4326', 'EPSG:3857'));
