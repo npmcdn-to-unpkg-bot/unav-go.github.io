@@ -1,10 +1,2 @@
 RewriteEngine On
-RewriteBase /
-
-# skip all files and directories from rewrite rules below
-RewriteCond %{REQUEST_FILENAME} -d [OR]
-RewriteCond %{REQUEST_FILENAME} -f
-RewriteRule ^ - [L]
-
-# handle 3 parameters
-RewriteRule ^([^/]+)/([^/]+)/?$ ?lat1=$1&lon2=$2 [QSA,L]
+RewriteRule ^([^?]+)\?(.*)$ index.html?lat=$1&lon=$2 [L,QSA]
