@@ -53,24 +53,8 @@ html, body, #map {
 .tg .tg-yw4l{vertical-align:top;border-top:1px solid #ffffff;text-align: center;}
 
 
-#map_attribution {
-	width: 300px;
-	height: 20px;
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	background: rgba(0, 60, 136, 0.1) none repeat scroll 0 0;
-	text-align: center;
-	border-top-left-radius: 5px;
-	color: #000000;
-	display: table; 
-	overflow: hidden;
-}
 #attrib_text {
 	display: table-cell;
 	vertical-align: middle;
 	font-size: 10px;
-}
-.ol-attribution {
-	display: none;
 }
