@@ -17,8 +17,8 @@
 		  return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
 		}
 				
-		var map_lat = 50.0091;
-		var map_lng = 4.6663;
+		var map_lat = 50.00913;
+		var map_lng = 4.66632;
 		
 		// Check params are float
 		try {
@@ -88,8 +88,8 @@
 		map.addOverlay(pos);
 		pos.setPosition(ol.proj.transform([map_lng, map_lat], 'EPSG:4326', 'EPSG:3857'));
 		
-		$('#lat').html("Lat: " + map_lat.toFixed(4).toString());
-		$('#lng').html("Lon: " + map_lng.toFixed(4).toString());
+		$('#lat').html("Lat: " + map_lat.toFixed(5).toString());
+		$('#lng').html("Lon: " + map_lng.toFixed(5).toString());
 		
 		if (window.navigator.userAgent.indexOf("Ubuntu") != -1 && window.navigator.userAgent.indexOf(" like Android") != -1) {
 			document.getElementById("unav_href_logo").href="scope://com.canonical.scopes.clickstore?q=unavapp";
