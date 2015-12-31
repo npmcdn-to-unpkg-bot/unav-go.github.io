@@ -47,7 +47,7 @@
 		<table class="tg">
 		  <tr>
 			<th class="tg-yw4l">
-				<a href="about/"><img src="img/unav.png" id="unav_logo"></a> for <a href="http://www.ubuntu.com/phone"><img id="ubuntu_logo" src="img/ubuntu.svg"></a>
+				<a href="about/" id="unav_href_logo"><img src="img/unav.png" id="unav_logo"></a> for <a href="http://www.ubuntu.com/phone"><img id="ubuntu_logo" src="img/ubuntu.svg"></a>
 			</th>
 		  </tr>
 		  <tr>
@@ -85,8 +85,8 @@
 	</script>
 	
 	<script type="text/javascript">
-		if (window.navigator.userAgent.indexOf("Ubuntu") != -1 && window.navigator.userAgent.indexOf(" like Android") != -1){
-			document.getElementById("unav_logo").href="scope://com.canonical.scopes.clickstore?q=unavapp";
+		if (window.navigator.userAgent.indexOf("Ubuntu") != -1 && window.navigator.userAgent.indexOf(" like Android") != -1) {
+			document.getElementById("unav_href_logo").href="scope://com.canonical.scopes.clickstore?q=unavapp";
 		}
 	</script>
   </body>
