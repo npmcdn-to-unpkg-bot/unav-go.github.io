@@ -4,44 +4,46 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 	
+	<title>uNav for Ubuntu Phone</title>
+	
 	<link rel="stylesheet" href="css/ol.css" type="text/css">
 	<link rel="stylesheet" href="css/unav.css" type="text/css">
 	
 	<script src="js/jquery.min.js" type="text/javascript"></script>
 	<script src="js/ol.js" type="text/javascript"></script>
 	
-	<title>uNav for Ubuntu Phone</title>
+	<script>
+		function getURLParameter(name) {
+		  return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
+		}
+				
+		var map_lat = 50.0091;
+		var map_lng = 4.6663;
+		
+		// Check params are float
+		try {
+			var params = getURLParameter('p');
+			var param_lat = params.split(',')[0];
+			var param_lng = params.split(',')[1];
+			
+			if ((!isNaN(param_lat) && param_lat.toString().indexOf('.') != -1) && (!isNaN(param_lng) && param_lng.toString().indexOf('.') != -1)) {
+				var map_lat = parseFloat(param_lat);
+				var map_lng = parseFloat(param_lng);
+			}
+			else {
+				location.href = "about/";
+			}
+		}
+		catch(e) {
+			location.href = "about/";
+		}
+	</script>
+	
   </head>
   
   <body>
-	  
 	<div id="map" class="map"></div>
-	
-	<script type="text/javascript">
-	var attribution = new ol.control.Attribution({
-		collapsible: false
-	});
-	var map = new ol.Map({
-		target: 'map',
-		layers: [
-		  new ol.layer.Tile({
-			source: new ol.source.MapQuest({layer: 'osm'})
-		  })
-		],
-		controls: ol.control.defaults({ attribution: false }).extend([attribution]),
-		view: new ol.View({
-		center: ol.proj.transform([4.666389, 50.009167], 'EPSG:4326', 'EPSG:3857'),
-		zoom: 17,
-		minZoom: 1,
-		maxZoom: 22
-		})
-	});
-	pos = new ol.Overlay({
-	element: $('<img id="marker_pos" src="img/pos.png">')
-		.css({marginTop: '-40px', marginLeft: '-12px', cursor: 'pointer'})
-	});
-	map.addOverlay(pos);
-	</script>
+
 	<div id="unav">
 		
 		<table class="tg">
@@ -52,42 +54,47 @@
 		  </tr>
 		  <tr>
 			<td class="tg-yw4l">
-				<span class="coord" id="lat">Lat: ?</span>&nbsp;<span class="coord" id="lng">Lon: ?</span>
+				<span class="coord" id="lat">Lat: -</span>&nbsp;<span class="coord" id="lng">Lon: -</span>
 			</td>
 		  </tr>
 		</table>
+		
 	</div>
 
-	<script>
-		function getURLParameter(name) {
-		  return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
-		}
-		var coord = getURLParameter('p');
-		// Check coord is float
-		try {
-			var aux_lat = coord.split(',')[0];
-			var aux_lng = coord.split(',')[1];
-			if ((!isNaN(aux_lat) && aux_lat.toString().indexOf('.') != -1) && (!isNaN(aux_lng) && aux_lng.toString().indexOf('.') != -1)) {
-				var lat = parseFloat(aux_lat);
-				var lng = parseFloat(aux_lng);
-				$('#lat').html("Lat: " + lat.toFixed(4));
-				$('#lng').html("Lon: " + lng.toFixed(4));
-				pos.setPosition(ol.proj.transform([lng, lat], 'EPSG:4326', 'EPSG:3857'));
-				map.getView().setCenter(ol.proj.transform([lng, lat], 'EPSG:4326', 'EPSG:3857'));
-			}
-			else {
-				location.href = "about/";
-			}
-		}
-		catch(e) {
-				location.href = "about/";
-		}
-	</script>
-	
 	<script type="text/javascript">
+		var attribution = new ol.control.Attribution({
+			collapsible: false
+		});
+		var map = new ol.Map({
+			target: 'map',
+			layers: [
+			  new ol.layer.Tile({
+				source: new ol.source.MapQuest({layer: 'osm'})
+			  })
+			],
+			controls: ol.control.defaults({ attribution: false }).extend([attribution]),
+			view: new ol.View({
+				center: ol.proj.transform([map_lng, map_lat], 'EPSG:4326', 'EPSG:3857'),
+				zoom: 17,
+				minZoom: 2,
+				maxZoom: 21
+			})
+		});
+		
+		pos = new ol.Overlay({
+		element: $('<img id="marker_pos" src="img/pos.png">')
+			.css({marginTop: '-40px', marginLeft: '-12px', cursor: 'pointer'})
+		});
+		map.addOverlay(pos);
+		pos.setPosition(ol.proj.transform([map_lng, map_lat], 'EPSG:4326', 'EPSG:3857'));
+		
+		$('#lat').html("Lat: " + map_lat.toFixed(4).toString());
+		$('#lng').html("Lon: " + map_lng.toFixed(4).toString());
+		
 		if (window.navigator.userAgent.indexOf("Ubuntu") != -1 && window.navigator.userAgent.indexOf(" like Android") != -1) {
 			document.getElementById("unav_href_logo").href="scope://com.canonical.scopes.clickstore?q=unavapp";
 		}
 	</script>
+	
   </body>
 </html>
