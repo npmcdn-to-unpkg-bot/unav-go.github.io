@@ -428,6 +428,20 @@ ul.social-list li a.tw{
 /*-- Footer Part Ends Here --*/
 /*-- Media Queries Starts Here --*/
 @media(max-width:1024px){
+	#btn_install {
+		display:none;
+	}
+	#img_bq, #img_bq {
+		max-width: 200px;
+	}
+	.col-md-4.iphone {
+		width: 30%;
+		float: left;
+	}
+	.col-md-8.header-matter {
+		width: 70%;
+		float: left;
+	}
 	.first-img {
 		top: -39%;
 	}
@@ -466,6 +480,9 @@ ul.social-list li a.tw{
 	}
 }
 @media(max-width:768px){
+	#btn_install {
+		display:none;
+	}
 	.col-md-4.iphone {
 		width: 30%;
 		float: left;
@@ -546,6 +563,9 @@ ul.social-list li a.tw{
 	}
 }
 @media(max-width:640px){
+	#btn_install {
+		display:none;
+	}
 	.header-matter p {
 		font-size: 0.8em;
 	}
@@ -579,6 +599,9 @@ ul.social-list li a.tw{
 	}
 }
 @media(max-width:480px){
+	#btn_install {
+		display:none;
+	}
 	.col-md-8.header-matter {
 		width: 100%;
 	}
@@ -667,6 +690,9 @@ ul.social-list li a.tw{
 	}
 }
 @media(max-width:320px){
+	#btn_install, #img_meizu {
+		display:none;
+	}
 	.col-md-8.header-matter {
 		width: 60%;
 		padding: 0;
