@@ -431,8 +431,11 @@ ul.social-list li a.tw{
 	#btn_install {
 		display:none;
 	}
-	#img_bq, #img_bq {
+	#img_bq, #img_meizu {
 		max-width: 200px;
+	}
+	#img_meizu {
+		padding-top: 100px;
 	}
 	.col-md-4.iphone {
 		width: 30%;
