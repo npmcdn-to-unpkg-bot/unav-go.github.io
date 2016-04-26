@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unav_voices>
+	<voice>
+		<folder>en_0</folder>
+		<lang>English</lang>
+		<variant>British</variant>
+		<genre>Male</genre>
+		<size>650Kb</size>
+		<description>Just a voice</description>
+		<author>Fernando</author>
+		<recommended>N</recommended>
+	</voice>
+	<voice>
+		<folder>en_1</folder>
+		<lang>English</lang>
+		<variant>British</variant>
+		<genre>Female</genre>
+		<size>750Kb</size>
+		<description>Just another voice</description>
+		<author>María</author>
+		<recommended>Y</recommended>
+	</voice>
+	<voice>
+		<folder>es_0</folder>
+		<lang>Español</lang>
+		<variant>España</variant>
+		<genre>Masculino</genre>
+		<size>700Kb</size>
+		<description>Una voz</description>
+		<author>Pedro</author>
+		<recommended>Y</recommended>
+	</voice>
+</unav_voices>
