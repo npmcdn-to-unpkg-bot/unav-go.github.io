@@ -3,7 +3,7 @@
 	<voice>
 		<folder>en_0</folder>
 		<lang>en</lang>
-		<lang_long>English</lang_long>
+		<native_lang>English</native_lang>
 		<variant>British</variant>
 		<genre>Male</genre>
 		<size>650Kb</size>
@@ -14,7 +14,7 @@
 	<voice>
 		<folder>en_1</folder>
 		<lang>en</lang>
-		<lang_long>English</lang_long>
+		<native_lang>English</native_lang>
 		<variant>British</variant>
 		<genre>Female</genre>
 		<size>750Kb</size>
@@ -25,7 +25,7 @@
 	<voice>
 		<folder>es_0</folder>
 		<lang>es</lang>
-		<lang_long>Español</lang_long>
+		<native_lang>Español</native_lang>
 		<variant>España</variant>
 		<genre>Masculino</genre>
 		<size>700Kb</size>
