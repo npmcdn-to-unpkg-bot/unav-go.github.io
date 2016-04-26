@@ -2,7 +2,8 @@
 <unav_voices>
 	<voice>
 		<folder>en_0</folder>
-		<lang>English</lang>
+		<lang>en</lang>
+		<lang_long>English</lang_long>
 		<variant>British</variant>
 		<genre>Male</genre>
 		<size>650Kb</size>
@@ -12,7 +13,8 @@
 	</voice>
 	<voice>
 		<folder>en_1</folder>
-		<lang>English</lang>
+		<lang>en</lang>
+		<lang_long>English</lang_long>
 		<variant>British</variant>
 		<genre>Female</genre>
 		<size>750Kb</size>
@@ -22,7 +24,8 @@
 	</voice>
 	<voice>
 		<folder>es_0</folder>
-		<lang>Español</lang>
+		<lang>es</lang>
+		<lang_long>Español</lang_long>
 		<variant>España</variant>
 		<genre>Masculino</genre>
 		<size>700Kb</size>
