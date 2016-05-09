@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="icon" type="image/x-icon" href="https://pages.github.com/favicon.ico">
+    <link type="text/css" href="index_files/pages.css" media="all" rel="stylesheet">
+
+<title>uNav map offline - How to</title>
+<meta name="description" content="How to run uNav with offline map tiles">
+  </head>
+
+  <body class="home ">
+
+
+<section id="hero-spot" class="hero-spot">
+    <img src="index_files/unav.png" alt="uNav" class="logo">
+
+    <h1>uNav with maps offline!</h1>
+    <h2>It's the time ;)</h2>
+
+    <div id="slideshow">
+      <img src="index_files/meizu.png" class="slide active">
+    </div>
+</section>
+
+<section id="tutorial" class="tutorial">
+  <h1>You'll need to do a few manual steps from <strong>an Ubuntu Desktop</strong></h1>
+  <h2>Don't worry, they are not a big deal :)</h2>
+
+  <!-- ### Start of tutorials -->
+  <ul id="user-site" class="tutorial-list wrapper active">
+    <li id="terminal-step-1" class="option-terminal animate-in">
+      <h4>Download the map tiles</h4>
+      <p>You can download maps from any map server with any app!<br>You can do it from the Terminal. Just install the program:</p>
+
+      <div class="terminal">
+        <div class="header"></div>
+        <div class="shell">
+          <p><span class="path">~</span><span class="prompt">$</span>sudo apt-get install downloadosmtiles</p>
+        </div>
+      </div>
+    </li>
+    
+    <li class="option-all animate-in">
+      <h4>Get the area</h4>
+      <p>Tip: Go to <a href="http://openstreetmap.org/">OpenStreetMap</a> and click on Export.<br>You have the coordinates in step 4:</p>
+        <span><img src="index_files/osm_steps.png" height="400px"></span>
+    </li>
+
+    <li id="terminal-step-1" class="option-terminal animate-in">
+      <h4>Download that area</h4>
+      <p>Use those coordinates in downloadosmtiles</p>
+      <p>(Choose the zoom range you desire)</p>
+
+      <div class="terminal">
+        <div class="header"></div>
+        <div class="shell">
+          <p><span class="path">~</span><span class="prompt">$</span>mkdir maps</p>
+          <p><span class="path">~</span><span class="prompt">$</span>cd maps</p>
+          <p><span class="path">~</span><span class="prompt">$</span>/usr/bin/downloadosmtiles --lat=51.4244:51.4913 --lon=6.9837:7.0422 --zoom=17:19</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="option-all animate-in">
+      <h4>Move the maps to phone</h4>
+      <p>Move that <em>maps</em> folder to <strong>~/.local/share/navigator.costales</strong> into the phone</p>
+    </li>
+
+    <li class="option-all animate-in">
+      <h4>Set offline maps</h4>
+      <p>Open uNav and go to Settings. Choose <em>Offline</em> maps:</p>
+        <span><img src="index_files/unav_settings.png"></span>
+    </li>
+
+    <li class="option-all animate-in">
+      <h4>Enjoy it!</h4>
+      <p>It's done |o/</p>
+    </li>
+
+
+</section>
+
+<script src="index_files/jquery.js"></script>
+<script>window.slides = {"bootstrap":"Bootstrap","yeoman":"Yeoman","facebookdesign":"Facebook Design","foundation":"Foundation","ghtraining":"GitHub Training","adobeos":"Adobe Open Source","jekyllrb":"Jekyll","electron":"Electron","semanticui":"Semantic UI","microsoft":"Microsoft on GitHub"}</script>
+<script src="index_files/application.js"></script>
+
+
+</body></html>
