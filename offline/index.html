@@ -23,46 +23,77 @@
 </section>
 
 <section id="tutorial" class="tutorial">
-  <h1>You'll need to do a few manual steps<br><strong>from a PC</strong></h1>
+  <h1>You'll need to do a few steps<br><strong>from a PC</strong></h1>
   <h2>Don't worry, they are not a big deal :)</h2>
 
   <!-- ### Start of tutorials -->
   <ul id="user-site" class="tutorial-list wrapper active">
     <li id="terminal-step-1" class="option-terminal animate-in">
-      <h4>Install the software</h4>
-      <p>You can download maps from any map server with any app!<br>You can do it from the Terminal. Just install:</p>
+      <h4>Intro</h4>
+      <p>You can download maps from any map server with any app!<br>We'll use <a href="http://wiki.openstreetmap.org/wiki/JTileDownloader" target="_blank">jTileDownloader</a>.<br>You can do use <a href="apt:downloadosmtiles">downloadosmtiles</a> too on Terminal.</p>
+    </li>
+    
+    <li id="terminal-step-1" class="option-terminal animate-in">
+      <h4>Install java</h4>
+      <p>jTileDownloader is a java aplication ;)</p>
 
       <div class="terminal">
         <div class="header"></div>
         <div class="shell">
-          <p><span class="path">~</span><span class="prompt">$</span>sudo apt-get install downloadosmtiles</p>
+          <p><span class="path">~</span><span class="prompt">$</span>sudo apt-get install openjdk-8-jdk unzip</p>
+        </div>
+      </div>
+    </li>
+    
+    <li id="terminal-step-1" class="option-terminal animate-in">
+      <h4>Download jTileDownloader</h4>
+      <p>Check <a href="http://wiki.openstreetmap.org/wiki/JTileDownloader" target="_blank">here</a> you're downloading the last version</p>
+
+      <div class="terminal">
+        <div class="header"></div>
+        <div class="shell">
+          <p><span class="path">~</span><span class="prompt">$</span>cd ~</p>
+          <p><span class="path">~</span><span class="prompt">$</span>wget http://svn.openstreetmap.org/applications/utils/downloading/JTileDownloader/trunk/release/jTileDownloader-0-6-1.zip</p>
+          <p><span class="path">~</span><span class="prompt">$</span>unzip jTileDownloader-0-6-1.zip</p>
+          <p><span class="path">~</span><span class="prompt">$</span>rm jTileDownloader-0-6-1.zip</p>
+          <p><span class="path">~</span><span class="prompt">$</span>cd jTileDownloader</p>
+          <p><span class="path">~</span><span class="prompt">$</span>chmod +x jTileDownloader-0-6-1.jar</p>
+        </div>
+      </div>
+    </li>
+    
+    <li id="terminal-step-1" class="option-terminal animate-in">
+      <h4>Run jTileDownloader</h4>
+      <p>You can open the file <strong>~/jTileDownloader/jTileDownloader-0-6-1.jar</strong> with java from your file browser.<br>You can run it from Terminal too:</p>
+
+      <div class="terminal">
+        <div class="header"></div>
+        <div class="shell">
+          <p><span class="path">~</span><span class="prompt">$</span>~/jTileDownloader/jTileDownloader-0-6-1.jar</p>
         </div>
       </div>
     </li>
     
     <li class="option-all animate-in">
-      <h4>Get the area</h4>
-      <p>Go to <a href="http://openstreetmap.org/">OpenStreetMap</a> &gt; <em>Export</em> &gt; <em>Manually select a different area</em> &gt; Choose your area<br>You have the coordinates in step 4: <strong><em>lat1</em></strong>:<strong><em>lat2</em></strong> & <strong><em>lon1</em></strong>:<strong><em>lon2</em></strong></p>
-        <span><img src="files/osm_steps.png" height="400px"></span>
-    </li>
-
-    <li id="terminal-step-1" class="option-terminal animate-in">
-      <h4>Download that area</h4>
-      <p>Use those coordinates in downloadosmtiles:</p>
-
-      <div class="terminal">
-        <div class="header"></div>
-        <div class="shell">
-          <p><span class="path">~</span><span class="prompt">$</span>mkdir maps</p>
-          <p><span class="path">~</span><span class="prompt">$</span>cd maps</p>
-          <p><span class="path">~</span><span class="prompt">$</span>/usr/bin/downloadosmtiles --lat=51.4244:51.4913 --lon=6.9837:7.0422 --zoom=13:17</p>
-        </div>
-      </div>
+      <h4>Download the map</h4>
+      <p>In <em>Main</em> tab &gt; <em>Bounding Box (Lat/Lon)</em> tab &gt; <em>Slippy Map chooser</em> button &gt; Choose the area to download.</p>
+      <p>In <em>Output Zoom Levels (ex. 12,13,14)</em> set zooms: <em>17,16,15,14,13</em>.</p>
+      <p>In <em>Mapnik</em> set your favourite map.</p>
+      <p>In <em>Outputfolder</em> set where the folder where the maps will be saved.</p>
+      <p><strong>And just click on <em>Download Tiles</em> button</strong>.</p>
+        <span><img src="files/jarea.png"></span>
     </li>
 
     <li class="option-all animate-in">
       <h4>Move the maps to phone</h4>
-      <p>Move that <em>maps</em> folder to <strong>~/.local/share/navigator.costales</strong> into the phone</p>
+      <p>Move that <em>maps</em> folder to <strong>~/.local/share/navigator.costales</strong> into the phone.</p>
+      <p>You can move to Downloads folder and then from phone Terminal:</p>
+      <div class="terminal">
+        <div class="header"></div>
+        <div class="shell">
+          <p><span class="path">~</span><span class="prompt">$</span>mv ~/Downloads/maps ~/.local/share/navigator.costales</p>
+        </div>
+      </div>
     </li>
 
     <li class="option-all animate-in">
