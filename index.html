@@ -70,14 +70,7 @@
 			target: 'map',
 			layers: [
 				new ol.layer.Tile({
-					source: new ol.source.Stamen(
-						{layer: 'terrain'},
-						attributions: [
-							new ol.Attribution({
-								html: "<a href='https://www.stamen.com/'>Stamen</a> tiles © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"
-							})
-						]
-					),
+					source: new ol.source.Stamen({layer: 'terrain'}),
 				})
 			],
 			controls: ol.control.defaults({ attribution: false }).extend([attribution]),
