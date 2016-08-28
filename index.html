@@ -1,29 +1,25 @@
-<!doctype html>
-<html lang="en">
-  <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-    <link rel="icon" type="image/x-icon" href="img/unav.ico">
-	
-	<title>Map Coordinate</title>
-	
-	<link rel="stylesheet" href="css/ol.css" type="text/css">
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Map</title>
+	<meta charset="utf-8" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta property="og:image" content="http://unav.me/offline/files/unav.png">
+
+	<link rel="stylesheet" href="https://npmcdn.com/leaflet@1.0.0-rc.3/dist/leaflet.css" />
 	<link rel="stylesheet" href="css/unav.css" type="text/css">
+	<link rel="icon" type="image/x-icon" href="http://unav.me/unav.ico">
 	
-	<script src="js/jquery.min.js" type="text/javascript"></script>
-	<script src="js/ol.js" type="text/javascript"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
 	
 	<script>
-		function getURLParameter(name) {
-		  return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
-		}
-				
 		var map_lat = 50.00913;
 		var map_lng = 4.66632;
 		
-		// Check params are float
+		// Get params as float
 		try {
-			var params = getURLParameter('p');
+			var params = window.location.href.replace('http://map.unav.me/?', '').replace('http://map.unav.me?', '').replace('%2C', ',');
 			var param_lat = params.split(',')[0];
 			var param_lng = params.split(',')[1];
 			
@@ -40,55 +36,42 @@
 		}
 	</script>
 	
-  </head>
-  
-  <body>
-	<div id="map" class="map"></div>
+</head>
+<body>
+	<div id="mapid"></div>
 
 	<div id="unav">
 		
-		<table class="tg">
-		  <tr>
-			<th class="tg-yw4l">
-				<a href="http://unav.me" id="unav_href_logo"><img src="img/unav.png" id="unav_logo"></a> for <a href="http://www.ubuntu.com/phone"><img id="ubuntu_logo" src="img/ubuntu.svg"></a>
-			</th>
-		  </tr>
-		  <tr>
-			<td class="tg-yw4l">
-				<span class="coord" id="lat">Lat: -</span>&nbsp;<span class="coord" id="lng">Lon: -</span>
-			</td>
-		  </tr>
-		</table>
+	    <table class="tg">
+	      <tr>
+		    <th class="tg-yw4l">
+			    <a href="http://unav.me" id="unav_href_logo"><img src="img/unav.svg" id="unav_logo"></a>
+			    <a href="http://www.ubuntu.com/phone"><img id="ubuntu_logo" src="img/ubuntu.svg"></a>
+		    </th>
+	      </tr>
+	      <tr>
+		    <td class="tg-yw4l">
+			    <span class="coord" id="lat">Lat: -</span>&nbsp;<span class="coord" id="lng">Lon: -</span>
+		    </td>
+	      </tr>
+	    </table>
 		
 	</div>
 
-	<script type="text/javascript">
-		var attribution = new ol.control.Attribution({
-			collapsible: false
-		});
-		var map = new ol.Map({
-			target: 'map',
-			layers: [
-				new ol.layer.Tile({
-					source: new ol.source.Stamen({layer: 'terrain'}),
-				})
-			],
-			controls: ol.control.defaults({ attribution: false }).extend([attribution]),
-			view: new ol.View({
-				center: ol.proj.transform([map_lng, map_lat], 'EPSG:4326', 'EPSG:3857'),
-				zoom: 17,
-				minZoom: 5,
-				maxZoom: 18
-			})
-		});
+
+	<script src="https://npmcdn.com/leaflet@1.0.0-rc.3/dist/leaflet.js"></script>
+	
+	
+	<script>
+		var mymap = L.map('mapid').setView([map_lat, map_lng], 16);
+
+		L.tileLayer('http://tile.stamen.com/terrain/{z}/{x}/{y}.jpg', {
+			maxZoom: 18,
+			attribution: '&copy; <a href="http://stamen.com/">Stamen</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+		}).addTo(mymap);
 		
-		pos = new ol.Overlay({
-		element: $('<img id="marker_pos" src="img/pos.png">')
-			.css({marginTop: '-40px', marginLeft: '-12px', cursor: 'pointer'})
-		});
-		map.addOverlay(pos);
-		pos.setPosition(ol.proj.transform([map_lng, map_lat], 'EPSG:4326', 'EPSG:3857'));
-		
+		L.marker([map_lat, map_lng]).addTo(mymap);
+
 		$('#lat').html("Lat: " + map_lat.toFixed(5).toString());
 		$('#lng').html("Lon: " + map_lng.toFixed(5).toString());
 		
@@ -96,6 +79,5 @@
 			document.getElementById("unav_href_logo").href="scope://com.canonical.scopes.clickstore?q=unavapp";
 		}
 	</script>
-	
-  </body>
+</body>
 </html>
